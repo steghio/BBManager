@@ -10,7 +10,7 @@ This tool is based on the rules found in the [Blood Bowl Living Rulebook version
 
 **This tool is an alpha version!**, it works without hiccups - but its a barebone tool with some open todos and limitations and the user experience can be further improved, but **it works** as a starting point if you, like me, crave this feature! :)
 
-##Usage
+## Usage
 **Get paper and pen during a game** and record the following events for each player:
 * successful pass: if a player makes a pass (except hand-off) and the receiver catches it successfully -> +1 SPP
 * injury: if a player injures or kills another player (NOT stun, NOT KO results) -> +2 SPP
@@ -40,7 +40,7 @@ Then you can access the following operations by pressing the indicated key and t
 * 'q' or 'Q': quite the tool
 * 'h' or 'H': show the usage help
 
-###Player information
+### Player information
 In this menu you can edit a player by first entering its name, including spaces if any. At the moment it is **case sensitive**!
 Also, duplicate entries would result in an error, so try to NOT use the same names for your players!
 
@@ -54,7 +54,7 @@ Then you can insert the following values:
 
 If you do not want to set a value, insert 'x' or 'X'
 
-###Team information
+### Team information
 In this menu you can edit a team by first entering its name, including spaces if any. At the moment it is **case sensitive**!
 Also, duplicate entries would result in an error, so try to NOT use the same names for your players!
 
@@ -62,8 +62,8 @@ Then you can specify whether the team won ('w' or 'W'), tied ('x' or 'X') or los
 
 If the team won, the rules allow for a die reroll. This roll is used to determine the cash gain after the match and can be rerolled only **once** and the second result **must be kept**, even if worse.
 
-###Updated data import
+### Updated data import
 After you are finished with all your modifications, replace the *Management.db* file with the one you just modified and start the game. Your changes should be reflected on your players and teams.
 
-##Third party libraries
+## Third party libraries
 This tool includes the SQLite-JDBC jar from https://github.com/xerial/sqlite-jdbc which is distributed under the [Apache Commons 2.0 license](http://www.apache.org/licenses/LICENSE-2.0)
