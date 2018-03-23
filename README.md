@@ -41,8 +41,7 @@ Then you can access the following operations by pressing the indicated key and t
 * **h** or **H**: show the usage help
 
 ### Player information
-In this menu you can edit a player by first entering its name, including spaces if any. At the moment it is **case sensitive**!
-Also, duplicate entries would result in an error, so try to NOT use the same names for your players!
+In this menu you can edit a player by first entering its name, including spaces if any. At the moment **duplicate entries** would result in an error, so try to NOT use the same names for your players!
 
 Then you can insert the following values:
 * **MA**: movement allowance, insert a positive or negative value to modify the current value of the same amount. Minimum value after the operation is 1 
@@ -55,8 +54,7 @@ Then you can insert the following values:
 If you do not want to set a value, insert **x** or **X**
 
 ### Team information
-In this menu you can edit a team by first entering its name, including spaces if any. At the moment it is **case sensitive**!
-Also, duplicate entries would result in an error, so try to NOT use the same names for your players!
+In this menu you can edit a team by first entering its name, including spaces if any. At the moment **duplicate entries** would result in an error, so try to NOT use the same names for your teams!
 
 Then you can specify whether the team won (**w** or **W**), tied (**x** or **X**) or lost (**l** or **L**) the game to update the cash and popularity accordingly.
 
