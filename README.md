@@ -48,7 +48,7 @@ Then you can insert the following values:
 * **ST**: strength, insert a positive or negative value to modify the current value of the same amount. Minimum value after the operation is 1 
 * **AG**: agility, insert a positive or negative value to modify the current value of the same amount. Minimum value after the operation is 1 
 * **AV**: armor value, insert a positive or negative value to modify the current value of the same amount. Minimum value after the operation is 1 
-* **EXP**: experience, insert a positive value to increase the current player experience (SPP) of the same amount. The level gains are automatically calculated and will be shown in game the next time you start it. Maximum player level is 7 that corresponds to 176 SPP.
+* **EXP**: experience, the gain is based on the key actions you have recorded. You will be asked to insert the amount of each to calculate it. The level gains are automatically calculated and will be shown in game the next time you start it. Maximum player level is 7 that corresponds to 176 SPP.
 * **DEAD**: insert 1 if this player died.
 
 If you do not want to set a value, insert **x** or **X**
