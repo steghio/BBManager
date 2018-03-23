@@ -104,9 +104,29 @@ public class BBManager {
         System.out.println();
 
         System.out.println("EXP: ");
+        Integer experience = new Integer(0);
+        System.out.println("Successful passes (Receiver caught the ball):");
         input = in.next();
-        Integer experience = (!input.equalsIgnoreCase("X") ? Integer.parseInt(input) : null);
+        experience += (!input.equalsIgnoreCase("X") ? Integer.parseInt(input) : 0);
         System.out.println();
+        System.out.println("Injuries (NO stun or KO) and Deaths caused:");
+        input = in.next();
+        experience += (!input.equalsIgnoreCase("X") ? Integer.parseInt(input) * 2 : 0);
+        System.out.println();
+        System.out.println("Succesful pass intercepts (Player caught the ball):");
+        input = in.next();
+        experience += (!input.equalsIgnoreCase("X") ? Integer.parseInt(input) * 2 : 0);
+        System.out.println();
+        System.out.println("Touchdowns:");
+        input = in.next();
+        experience += (!input.equalsIgnoreCase("X") ? Integer.parseInt(input) * 3 : 0);
+        System.out.println();
+        System.out.println("MVP, insert 1 if the player was elected as MVP, 'X' otherwise:");
+        input = in.next();
+        experience += (!input.equalsIgnoreCase("X") ? 5 : 0);
+        System.out.println();
+
+        experience = (experience == 0) ? null : experience;
 
         System.out.println("DEAD: ");
         input = in.next();
