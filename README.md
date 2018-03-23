@@ -12,11 +12,11 @@ This tool is based on the rules found in the [Blood Bowl Living Rulebook version
 
 ## Usage
 **Get paper and pen during a game** and record the following events for each player:
-* **successful pass**: if a player makes a pass (except hand-off) and the receiver catches it successfully -> +1 SPP
-* **injury**: if a player injures or kills another player (NOT stun, NOT KO results) -> +2 SPP
-* **interception**: if a player successfully intercepts a pass -> +2 SPP
-* **touchdown**: +3 SPP
-* **MVP**: at the end of each game one player per team is selected as MVP automatically -> +5 SPP
+* **successful pass**: if a player makes a pass (except hand-off) and the receiver catches it successfully. **+1 SPP**
+* **injury**: if a player injures or kills another player (NOT stun, NOT KO results) **+2 SPP**
+* **interception**: if a player successfully intercepts a pass **+2 SPP**
+* **touchdown**: **+3 SPP**
+* **MVP**: at the end of each game one player per team is selected as MVP automatically **+5 SPP**
 * **dead**: if a player is dead, mark it down
 * **injuries**: if a player suffers a long term injury, eg: -1 point to an attribute, mark it down
 
