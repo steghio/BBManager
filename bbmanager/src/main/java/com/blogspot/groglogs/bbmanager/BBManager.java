@@ -197,26 +197,32 @@ public class BBManager {
         if(args.length > 0){
             for(String arg : args){
                 switch(arg){
+                    case "--DEBUG":
                     case "--debug":
                         doDebug = true;
                         break;
+                    case "--SKIP-DB-BAK":
+                    case "--SKIP_DB_BAK":
                     case "--skip-db-bak":
+                    case "--skip_db_bak":
                         skip_db_bak = true;
                         break;
                     default:
                         System.err.println("Unrecognized option: '" + arg + "'");
+                        System.out.println("Usage: java -jar bbmanager.jar [--skip-db-bak] [--debug]");
+                        System.exit(1);
                 }
             }
         }
 
         //backup current DB
         if(!skip_db_bak){
-            if(!SQLiteUtils.doBackup()) System.out.println("DB backup FAILED!");
+            if(!SQLiteUtils.doBackup()) System.err.println("DB backup FAILED!");
             System.out.println();
         }
 
         Scanner in = new Scanner(System.in);
-        in.useDelimiter("\n");
+        in.useDelimiter(System.lineSeparator());
 
         System.out.println("BBManager v0.1 started");
         System.out.println();
