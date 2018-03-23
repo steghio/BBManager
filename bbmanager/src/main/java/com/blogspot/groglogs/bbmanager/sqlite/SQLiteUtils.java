@@ -50,7 +50,7 @@ public class SQLiteUtils {
         connect();
 
         try {
-            String op = "SELECT * FROM " + bb_player_listing + " WHERE name = ?";
+            String op = "SELECT * FROM " + bb_player_listing + " WHERE lower(name) = lower(?)";
 
             PreparedStatement stmt = conn.prepareStatement(op);
 
@@ -195,7 +195,7 @@ public class SQLiteUtils {
         connect();
 
         try {
-            String op = "SELECT * FROM " + bb_team_listing + " WHERE name = ?";
+            String op = "SELECT * FROM " + bb_team_listing + " WHERE lower(name) = lower(?)";
 
             PreparedStatement stmt = conn.prepareStatement(op);
 
