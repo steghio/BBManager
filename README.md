@@ -50,8 +50,8 @@ Then you can insert the following values:
 * **AG**: agility, insert a positive or negative value to modify the current value of the same amount. Minimum value after the operation is 1 
 * **AV**: armor value, insert a positive or negative value to modify the current value of the same amount. Minimum value after the operation is 1 
 * **EXP**: experience, the gain is based on the key actions you have recorded. You will be asked to insert the amount of each to calculate it. The level gains are automatically calculated and will be shown in game the next time you start it. Maximum player level is 7 that corresponds to 176 SPP.
-* **DEAD**: Press 'Y' or 'y' if the player is dead, 'N' or 'n' otherwise.
-* **Miss next match**: Press 'Y' or 'y' if the player should miss the next match, 'N' or 'n' otherwise.
+* **DEAD**: Press **Y** or **y** if the player is dead, **N** or **N** otherwise.
+* **Miss next match**: Press **Y** or **y** if the player should miss the next match, **N** or **N** otherwise.
 
 If you do not want to set a value, insert **x** or **X**
 
