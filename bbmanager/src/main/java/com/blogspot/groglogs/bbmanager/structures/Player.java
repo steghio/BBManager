@@ -8,7 +8,7 @@ public class Player {
     //experience
     private int idPlayerLevels, experience, nbLevelsUp;
     //status
-    private int star, dead, retired, age, nbMatchsSinceAgeRoll;
+    private int matchSuspended, star, dead, retired, age, nbMatchsSinceAgeRoll;
 
     public Player(String name){
         this.name = name;
@@ -140,5 +140,13 @@ public class Player {
 
     public void setNbMatchsSinceAgeRoll(int nbMatchsSinceAgeRoll) {
         this.nbMatchsSinceAgeRoll = nbMatchsSinceAgeRoll;
+    }
+
+    public int getMatchSuspended() {
+        return matchSuspended;
+    }
+
+    public void setMatchSuspended(int matchSuspended) {
+        this.matchSuspended = matchSuspended;
     }
 }

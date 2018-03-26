@@ -1,4 +1,4 @@
-package main.java.com.blogspot.groglogs.bbmanager.structures;
+package com.blogspot.groglogs.bbmanager.structures;
 
 public class Team {
     private int ID;

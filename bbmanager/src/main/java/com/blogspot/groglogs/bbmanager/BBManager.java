@@ -80,6 +80,18 @@ public class BBManager {
             showPlayerOptions(in);
         }
 
+        System.out.println("Insert player's team name (mandatory):");
+        input = in.next();
+        System.out.println();
+
+        if(input == null || input.equals("")){
+            System.out.println("Player's team name is mandatory!");
+            System.out.println();
+            showPlayerOptions(in);
+        }
+
+        String team_name = input;
+
         System.out.println("Insert player values or 'X' to skip setting a specific value:");
         System.out.println();
 
@@ -128,24 +140,30 @@ public class BBManager {
 
         experience = (experience == 0) ? null : experience;
 
-        System.out.println("DEAD: ");
+        System.out.println("DEAD: (Y/N)");
         input = in.next();
-        Integer dead = (!input.equalsIgnoreCase("X") ? Integer.parseInt(input) : null);
+        boolean dead = input.equalsIgnoreCase("Y");
         System.out.println();
 
-        System.out.println("Player " + name + " will be updated with following values:");
+        System.out.println("Miss next match: (Y/N)");
+        input = in.next();
+        boolean missNextMatch = input.equalsIgnoreCase("Y");
+        System.out.println();
+
+        System.out.println("Player '" + name + "' from team '" + team_name + "' will be updated with following values:");
         if(characsMovementAllowance != null) System.out.println("MA: " + characsMovementAllowance);
         if(characsStrength != null) System.out.println("ST: " + characsStrength);
         if(characsAgility != null) System.out.println("AG: " + characsAgility);
         if(characsArmourValue != null) System.out.println("AV: " + characsArmourValue);
         if(experience != null) System.out.println("EXP: " + experience);
-        if(dead != null) System.out.println("DEAD: " + dead);
+        System.out.println("DEAD: " + ((dead) ? "Yes" : "No"));
+        System.out.println("Miss next match: " + ((missNextMatch) ? "Yes" : "No"));
         System.out.println();
 
         Boolean proceed = showProceed(in);
 
         if(proceed == null) showMainMenu(in);
-        else if(proceed) BBLogic.updatePlayerValues(name, characsMovementAllowance, characsStrength, characsAgility, characsArmourValue, experience, dead);
+        else if(proceed) BBLogic.updatePlayerValues(name, team_name, characsMovementAllowance, characsStrength, characsAgility, characsArmourValue, experience, dead, missNextMatch);
         else showPlayerOptions(in);
 
     }
@@ -194,7 +212,8 @@ public class BBManager {
 
         int roll = BBLogic.getRandom(6);
 
-        if(matchResult != BBLogic.MATCH_LOSE){
+        //if team won, player is allowed to reroll
+        if(matchResult == BBLogic.MATCH_WIN){
             System.out.println("Roll result is: " + roll + ". You can reroll only once and must keep the new roll result! Type 'N' to reroll.");
 
             Boolean proceed = showProceed(in);

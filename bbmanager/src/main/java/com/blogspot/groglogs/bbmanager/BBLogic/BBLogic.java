@@ -2,7 +2,7 @@ package com.blogspot.groglogs.bbmanager.BBLogic;
 
 import com.blogspot.groglogs.bbmanager.sqlite.SQLiteUtils;
 import com.blogspot.groglogs.bbmanager.structures.Player;
-import main.java.com.blogspot.groglogs.bbmanager.structures.Team;
+import com.blogspot.groglogs.bbmanager.structures.Team;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,9 +24,13 @@ public class BBLogic {
         levelsExp.put(7, Integer.MAX_VALUE);
     }
 
+    //match result
     public static final int MATCH_WIN = 1;
     public static final int MATCH_TIE = 0;
     public static final int MATCH_LOSE = -1;
+
+    //player casualty type
+    public static final int CASUALTY_DEAD = 18;
 
     private static Random rand = new Random();
 
@@ -35,17 +39,11 @@ public class BBLogic {
         return rand.nextInt(dice) + 1;
     }
 
-    public static void updatePlayerValues(String name, Integer characsMovementAllowance, Integer characsStrength, Integer characsAgility, Integer characsArmourValue, Integer experience, Integer dead){
-        if(name == null || name.equals("")) throw new IllegalArgumentException("Name cannot be empty!");
+    public static void updatePlayerValues(String name, String team_name, Integer characsMovementAllowance, Integer characsStrength, Integer characsAgility, Integer characsArmourValue, Integer experience, boolean dead, boolean missNextMatch){
+        if(name == null || name.equals("")) throw new IllegalArgumentException("Player name cannot be empty!");
+        if(team_name == null || team_name.equals("")) throw new IllegalArgumentException("Team name cannot be empty!");
 
-        if(characsMovementAllowance == null &&
-                characsStrength == null &&
-                characsAgility == null &&
-                characsArmourValue == null &&
-                experience == null &&
-                dead == null) throw new IllegalArgumentException("At least one attribute must be set for the player!");
-
-        Player p = SQLiteUtils.getPlayerFromName(name);
+        Player p = SQLiteUtils.getPlayerFromNameAndTeamName(name, team_name);
 
         //minimum value for a characteristic is 1
         if(characsMovementAllowance != null && p.getCharacsMovementAllowance() > 1) p.setCharacsMovementAllowance(p.getCharacsMovementAllowance() + characsMovementAllowance);
@@ -65,18 +63,20 @@ public class BBLogic {
             p.setNbLevelsUp(totLevels);
         }
 
-        if(dead != null) p.setDead(dead);
+        //miss next match can be reverted after a match
+        p.setMatchSuspended(missNextMatch ? 1 : 0);
 
-        SQLiteUtils.updatePlayer(p);
+        //death is permanent and a player can't die twice, avoid duplicating records in it's already dead
+        SQLiteUtils.updatePlayer(p, team_name, dead && p.getDead() == 0);
 
     }
 
     public static void updateTeamValues(String name, int roll, int matchResult){
-        if(name == null || name.equals("")) throw new IllegalArgumentException("Name cannot be empty!");
+        if(name == null || name.equals("")) throw new IllegalArgumentException("Team name cannot be empty!");
 
-        Team t = SQLiteUtils.getTeamFromName(name);
+        Team t = SQLiteUtils.getTeamFromName(name, true); //open a new connection
 
-        int gold = (t.getPopularity() + roll) * 10000 + ((matchResult != -1) ? 10000 : 0);
+        int gold = (t.getPopularity() + roll) * 10000 + ((matchResult != MATCH_LOSE) ? 10000 : 0);
         t.setCash(t.getCash() + gold);
 
         int fan_factor_roll = getRandom(6) + getRandom(6);
