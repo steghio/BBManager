@@ -12,13 +12,14 @@ This tool is based on the rules found in the [Blood Bowl Living Rulebook version
 
 ## Usage
 **Get paper and pen during a game** and record the following events for each player:
-* **successful pass**: if a player makes a pass (except hand-off) and the receiver catches it successfully. **+1 SPP**
-* **injury**: if a player injures or kills another player (NOT stun, NOT KO results) **+2 SPP**
-* **interception**: if a player successfully intercepts a pass **+2 SPP**
-* **touchdown**: **+3 SPP**
-* **MVP**: at the end of each game one player per team is selected as MVP automatically **+5 SPP**
+* **successful pass**: if a player makes a pass (except hand-off) and the receiver catches it successfully. (+1 SPP)
+* **injury**: if a player injures or kills another player (NOT stun, NOT KO results) (+2 SPP)
+* **interception**: if a player successfully intercepts a pass (+2 SPP)
+* **touchdown**: (+3 SPP)
+* **MVP**: at the end of each game one player per team is selected as MVP automatically (+5 SPP)
 * **dead**: if a player is dead, mark it down
 * **injuries**: if a player suffers a long term injury, eg: -1 point to an attribute, mark it down
+* **miss next match**: if a player suffers a "miss next match" injury, mark it down
 
 Just consider the result even if a reroll or apothecary has been used.
 
@@ -41,7 +42,7 @@ Then you can access the following operations by pressing the indicated key and t
 * **h** or **H**: show the usage help
 
 ### Player information
-In this menu you can edit a player by first entering its name, including spaces if any. At the moment **duplicate entries** would result in an error, so try to NOT use the same names for your players!
+In this menu you can edit a player by first entering its name, then its team's name, including spaces and quotes - if any. At the moment **duplicate entries** would result in an error, so try to NOT use the same names for your players in the same team!
 
 Then you can insert the following values:
 * **MA**: movement allowance, insert a positive or negative value to modify the current value of the same amount. Minimum value after the operation is 1 
@@ -49,12 +50,13 @@ Then you can insert the following values:
 * **AG**: agility, insert a positive or negative value to modify the current value of the same amount. Minimum value after the operation is 1 
 * **AV**: armor value, insert a positive or negative value to modify the current value of the same amount. Minimum value after the operation is 1 
 * **EXP**: experience, the gain is based on the key actions you have recorded. You will be asked to insert the amount of each to calculate it. The level gains are automatically calculated and will be shown in game the next time you start it. Maximum player level is 7 that corresponds to 176 SPP.
-* **DEAD**: insert 1 if this player died.
+* **DEAD**: Press 'Y' or 'y' if the player is dead, 'N' or 'n' otherwise.
+* **Miss next match**: Press 'Y' or 'y' if the player should miss the next match, 'N' or 'n' otherwise.
 
 If you do not want to set a value, insert **x** or **X**
 
 ### Team information
-In this menu you can edit a team by first entering its name, including spaces if any. At the moment **duplicate entries** would result in an error, so try to NOT use the same names for your teams!
+In this menu you can edit a team by first entering its name, including spaces and quotes - if any. At the moment **duplicate entries** would result in an error, so try to NOT use the same names for your teams!
 
 Then you can specify whether the team won (**w** or **W**), tied (**x** or **X**) or lost (**l** or **L**) the game to update the cash and popularity accordingly.
 
