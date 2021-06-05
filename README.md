@@ -67,3 +67,5 @@ After you are finished with all your modifications, replace the *Management.db* 
 
 ## Third party libraries
 This tool includes the SQLite-JDBC jar from https://github.com/xerial/sqlite-jdbc which is distributed under the [Apache Commons 2.0 license](http://www.apache.org/licenses/LICENSE-2.0)
+
+Project is licensed under a [CreativeCommons Attribution-ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
